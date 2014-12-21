@@ -19,4 +19,3 @@ The code book for the source data set can be found at the following site
    5. STANDING
    6. LAYING
 ## Columns 3-81 Summarized mean and standard deviation from accelerometer and gyroscope measurements
-

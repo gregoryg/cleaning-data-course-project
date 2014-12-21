@@ -63,7 +63,6 @@ for (myset in c("test","train")) {
         test_measurements <- cbind(as.data.frame(subject), as.data.frame(activity), measurements)
     else
         train_measurements <- cbind(as.data.frame(subject), as.data.frame(activity), measurements)
-        
 }
 
 ## Merge test and training data sets
@@ -84,8 +83,8 @@ tidydata[,3] = NULL
 
 ## Write our tidy table
 message("Writing tidy data set as 'tidydata.tsv'")
-write.table(tidydata, "tidydata.txt", sep="\t", row.names=FALSE)
+write.table(tidydata, "tidydata.txt", sep="\t", row.names=FALSE, quote=FALSE)
 
 ## Note: load in and view the resulting data set with
-##   tidyset <- read.table("tidydata.tsv")
+##   tidyset <- read.table("tidydata.txt")
 ##   View(tidyset)
