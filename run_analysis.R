@@ -84,7 +84,7 @@ tidydata[,3] = NULL
 
 ## Write our tidy table
 message("Writing tidy data set as 'tidydata.tsv'")
-write.table(tidydata, "tidydata.tsv", sep="\t")
+write.table(tidydata, "tidydata.txt", sep="\t", row.names=FALSE)
 
 ## Note: load in and view the resulting data set with
 ##   tidyset <- read.table("tidydata.tsv")
