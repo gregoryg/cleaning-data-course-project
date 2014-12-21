@@ -82,7 +82,7 @@ tidydata[,3] = NULL
 tidydata[,3] = NULL
 
 ## Write our tidy table
-message("Writing tidy data set as 'tidydata.tsv'")
+message("Writing tidy data set as 'tidydata.txt'")
 write.table(tidydata, "tidydata.txt", sep="\t", row.names=FALSE, quote=FALSE)
 
 ## Note: load in and view the resulting data set with
