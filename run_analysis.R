@@ -22,7 +22,7 @@ if (!file.exists("Dataset.zip")) {
 unzip("Dataset.zip", list = FALSE)
 
 ## activity labels
-activity_labels <- read.csv(paste(datasetDir, "activity_labels.txt", sep="/"), sep="", col.names = c("val","name"), header=FALSE)
+activity_labels <- read.csv(paste(datasetDir, "activity_labels.txt", sep="/"), sep="", col.names = c("val","activityName"), header=FALSE)
 
 ## Get a vector of all column names
 columnNames <- make.names(read.csv(paste(datasetDir, "features.txt", sep="/"), sep="", col.names=c("val","name"), stringsAsFactors=FALSE, header=FALSE)[,2],
@@ -80,6 +80,10 @@ options(warn=0)   ## turn warnings back on
 ## delete the mean of subject and activity, which is meaningless
 tidydata[,3] = NULL
 tidydata[,3] = NULL
+
+## added after class: put in activity labels in addition to activity ID
+tidydata <- merge(activity_labels, tidydata, by.y = "activity", by.x = "val", all = TRUE)
+tidydata[,1] = NULL
 
 ## Write our tidy table
 message("Writing tidy data set as 'tidydata.txt'")
